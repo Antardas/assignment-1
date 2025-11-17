@@ -11,7 +11,7 @@ type Student = {
 }
 type Teacher ={
     name: string
-    expertise: ''
+    expertise: string
 }
 type BookBorrower = Teacher | Student
 ```
@@ -19,3 +19,23 @@ type BookBorrower = Teacher | Student
 এখানে BookBorrower হলো union type।
 
 মানে তার এখন বই ধার নিতে অব্যশই Student অথবা Teacher হতে হবে।
+
+#### Intersection
+Intersection ব্যবহার করা হয় দুটো বা তার অধিক টাইপকে এক সাথে যুক্ত করা।  এটি করা হয় (&) এই চিহ্নটির মাধ্যমে
+
+উদাহরণ হিসাবে ধরলে কোনো লাইব্রেরি এর বই ধার নিতে student এর অব্যশই id কার্ড থাকতে হবে।  
+যদি আমরা এটি typescript এর কোডের ভাষায় লিখি
+
+```ts
+type Student = {
+    name: string
+    group: string
+}
+
+type Card =  {
+    id: string
+    validDate: string
+}
+
+type EligibleStudent= Student & Card;
+```
