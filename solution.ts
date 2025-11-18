@@ -38,7 +38,7 @@ type BookRating = {
 }
 
 const filterByRating = (books: BookRating[]): BookRating[] => {
-    return books.filter((book: BookRating) => book.rating >= 4)
+    return books.filter((book: BookRating) => book.rating >= 4.0)
 }
 
 type User = {
